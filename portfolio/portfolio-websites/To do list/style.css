@@ -1,0 +1,12 @@
+* {
+    font-family: Helvetica, sans-serif;
+    margin: 10px;
+}
+
+.heading {
+    font-size: 50pt;
+}
+
+.todolist-div {
+    margin-top: 510px;
+}
