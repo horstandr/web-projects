@@ -13,8 +13,8 @@
 
 body {
         --s: 100px; /* control the size */
-        --c1: #edf3e0;
-        --c2: #fdffe0;
+        --c1: #00bbff;
+        --c2: #006898;
         
         --_s: calc(2*var(--s)) calc(2*var(--s));
         --_g: var(--_s) conic-gradient(at 40% 40%,#0000 75%,var(--c1) 0);
@@ -31,23 +31,30 @@ body {
 /* Upper text styling */
 
 .intro {
-    border-radius: 5pt;
-    background-color: rgb(255, 136, 136);
-    box-shadow: 10px 10px 1em black;
+    margin-left: calc(50vw - (800px / 2));
+    width: 800px;
+    border-radius: 20pt;
+    background-color: rgb(0, 187, 255);
+    text-align: center;
 }
 
 /* Portfolio space styling */
 
 .portfolio-show {
+    margin-left: calc(50vw - (1550px / 2));
     border: 1px solid black;  
     border-radius: 5pt;
-    height: calc(38vh + 5px);
-    padding: 5px;
+    height: auto;
+    padding: 10px;
+    padding-bottom: 20px;
+    width: 1550px;
     background-color: rgb(248, 245, 220);
     box-shadow: 10px 10px 1em black;
     display: grid;
-    grid-template-columns: 400px 400px;
-    column-gap: 120px;
+    grid-template-columns: 500px 500px 500px;
+    grid-template-rows: 37.5vh 37.5vh 37.5vh;
+    column-gap: 20px;
+    row-gap: 20px;
 }
 
 
@@ -120,6 +127,10 @@ a:hover {
     background-color: #333;   
 }
 
+.tile3 {
+    background-color: #000;
+}
+
 /* Desc in the individual tiles*/
 
 .tile1 > a > .portfolio-desc {
@@ -134,6 +145,11 @@ a:hover {
     z-index: 1;
 }
 
+.tile3 > a > .portfolio-desc {
+    box-shadow: 0 30px 100px white;
+    /* Makes sure the box-shadow is above the image*/
+    z-index: 1;
+}
 
 /*Makes sure that the desc stays white*/
 .portfolio-desc {
