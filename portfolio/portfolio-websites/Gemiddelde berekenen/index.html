@@ -13,12 +13,13 @@
         <div>
             <form action="javascript:Calculate()">
                 <p>Voer hier je cijfers in (je hoeft ze niet allemaal in te vullen):</p><br>
-                <input required="required" name="cijfer1" id="id1"></input>
-                <input type="number" name="cijfer2" id="id2"></input><br>
-                <input type="submit" value="Bereken" coolbutton>
+                <textarea name="number1" id="id1" cols="2" rows="1"></textarea>
+                <textarea name="number2" id="id2" cols="2" rows="1" ></textarea>
+                <br>
+                <button onclick="js:Calculate()" coolbutton>Bereken</button>
             </form>
         </div>
-        
+        <p>Resultaat:</p>
         <div class="result" id="result"></div>
     </div>
 </body>
