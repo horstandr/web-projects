@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemiddelde Berekenen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="body">
+        <h1>Gemiddelde Berekenen</h1>
+        <p>Bereken hier je gemiddelde cijfer!</p>
+        <div>
+            <form action="javascript:Calculate()">
+                <p>Voer hier je cijfers in (je hoeft ze niet allemaal in te vullen):</p><br>
+                <input required="required" name="cijfer1" id="id1"></input>
+                <input type="number" name="cijfer2" id="id2"></input><br>
+                <input type="submit" value="Bereken" coolbutton>
+            </form>
+        </div>
+        
+        <div class="result" id="result"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
