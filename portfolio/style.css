@@ -1,3 +1,15 @@
+/* Defining colours */
+* {
+    --blue-green: #219EBC;
+    --pale-azure: #90D7FF;
+    --pale-azure-translucent: rgba(144, 214, 255, 0.323);
+    --prussian-blue: #023047;
+    --selective-yellow: #FFB703;
+    --palatinate: #5C164E;
+    --plum: #9B287B;
+    --bright-pink: #F7567C;
+}
+
 /*
 
         START BASIC STYLING
@@ -5,54 +17,48 @@
 
 */
 
+
 * {
     font-family:  Arial, Helvetica, sans-serif;
-    margin: 10px;
-    padding: 5px;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
-        --s: 100px; /* control the size */
-        --c1: #00bbff;
-        --c2: #006898;
-        
-        --_s: calc(2*var(--s)) calc(2*var(--s));
-        --_g: var(--_s) conic-gradient(at 40% 40%,#0000 75%,var(--c1) 0);
-        --_p: var(--_s) conic-gradient(at 20% 20%,#0000 75%,var(--c2) 0);
-        background:
-        calc( .9*var(--s)) calc( .9*var(--s))/var(--_p),
-        calc(-.1*var(--s)) calc(-.1*var(--s))/var(--_p),
-        calc( .7*var(--s)) calc( .7*var(--s))/var(--_g),
-        calc(-.3*var(--s)) calc(-.3*var(--s))/var(--_g),
-        conic-gradient(from 90deg at 20% 20%,var(--c2) 25%,var(--c1) 0) 0 0/var(--s) var(--s);
+    margin: 0;
+    background: linear-gradient(to bottom right, var(--blue-green), var(--plum));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
 /* Upper text styling */
 
 .intro {
+    margin: 50px 0;
+    padding: 5px;
     margin-left: calc(50vw - (800px / 2));
     width: 800px;
+    line-height: 50px;
     border-radius: 20pt;
-    background-color: rgb(0, 187, 255);
+    background-color: var(--pale-azure);
     text-align: center;
+    box-shadow: 10px 10px 1em rgba(0,0,0,0.3);
 }
 
 /* Portfolio space styling */
 
 .portfolio-show {
-    margin-left: calc(50vw - (1550px / 2));
-    border: 1px solid black;  
-    border-radius: 5pt;
-    height: 38vh;
+    margin-left: calc(50% - (1560px / 2));
+    border-radius: 20pt;
+    height: 360px;
     padding: 10px;
-    padding-bottom: 20px;
-    width: 1550px;
-    background-color: rgb(248, 245, 220);
-    box-shadow: 10px 10px 1em black;
+    width: 1560px;
+    background-color: var(--pale-azure-translucent);
+    box-shadow: 10px 10px 1em rgba(0,0,0,0.3);
     display: grid;
     grid-template-columns: 500px 500px 500px;
-    grid-template-rows: 37.5vh 37.5vh 37.5vh;
+    grid-template-rows: 340px 340px 340px;
     column-gap: 20px;
     row-gap: 20px;
 }
@@ -62,7 +68,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    max-height: 100px;
+    height: 20px;
     display: block;
 }    
 
@@ -73,25 +79,25 @@ body {
 */
 
 .portfolio-tile {
-    margin: 5px;
+    margin: 10px;
     width: 500px;
-    height: 37.5vh;
-    background: aliceblue;
-    border: 1px solid black;
-    border-radius: 5pt;
+    height: 340px;
+    border-radius: 10pt;
     padding: 0px;
     overflow: hidden;
+    display: block;
 }
 
 /* Website image styling */
 
 #image {
-    position: relative;
+    display: block;
     width: 500px;
-    height: 300px;
+    height: 285px;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     z-index: 0;
+    object-fit: fill;
 }
 
 /* Link style cancelling */
@@ -101,13 +107,6 @@ a{
     text-decoration: none;
 }
 
-/* On hover the style appears */
-
-a:hover {
-    text-decoration: underline;
-}
-
-
 /* Style of every desc (title and desc) */
 
 .portfolio-desc {
@@ -115,24 +114,58 @@ a:hover {
     border-top: 1px solid black;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 15px;
     display:block;
+    border-radius: 0pt;
     position: relative;
+    background: rgba(255,255,255,0.3);
+    color: black;
+}
+
+/* Hover FX */
+
+.tile1 > a:hover > .portfolio-desc {
+    background-color: #333;
+    color: var(--selective-yellow);
+    box-shadow: 0 30px 100px var(--selective-yellow);
+    /* Makes sure the box-shadow is above the image*/
+    z-index: 1;
+}
+
+.tile2 > a:hover > .portfolio-desc {
+    background-color: rgba(255, 60, 106, 0.849);
+    box-shadow: 0 30px 100px rgba(255, 60, 106, 1);
+    /* Makes sure the box-shadow is above the image*/
+    z-index: 1;
+}
+
+.tile3 > a:hover > .portfolio-desc {
+    background-color: #000;
+    color: #0f0;
+    box-shadow: 0 30px 100px #0f0;
+    border-top: 1px solid rgb(0, 122, 0);
+    /* Makes sure the box-shadow is above the image*/
+    z-index: 1;
 }
 
 /* Individual tile styling */
 
 .tile1 {
-    background-color: #333;   
+    padding-top:-100px;
+}
+
+/*.tile2 {
+    background-color: #fff;
 }
 
 .tile3 {
     background-color: #000;
-}
+}/*
 
 /* Desc in the individual tiles*/
 
 .tile1 > a > .portfolio-desc {
+    
     box-shadow: 0 30px 100px white;
     /* Makes sure the box-shadow is above the image*/
     z-index: 1;
@@ -148,9 +181,4 @@ a:hover {
     box-shadow: 0 30px 100px white;
     /* Makes sure the box-shadow is above the image*/
     z-index: 1;
-}
-
-/*Makes sure that the desc stays white*/
-.portfolio-desc {
-    background-color: aliceblue;
 }
