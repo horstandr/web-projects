@@ -44,7 +44,7 @@ body {
     margin-left: calc(50vw - (1550px / 2));
     border: 1px solid black;  
     border-radius: 5pt;
-    height: auto;
+    height: 38vh;
     padding: 10px;
     padding-bottom: 20px;
     width: 1550px;
