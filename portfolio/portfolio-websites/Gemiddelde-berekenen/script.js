@@ -7,4 +7,8 @@ function Calculate() {
     var result = n1 + n2;
     result = result / 2;
     document.querySelector("#result").innerHTML = result;
+    if (document.querySelector("#result").innerHTML == 'NaN') {
+        alert('Please fill both spaces with numbers!');
+        document.querySelector("#result").innerHTML = '';
+    }
 }
