@@ -12,8 +12,10 @@
 
 * {
     color: #ffffffff;
-    margin-top: 5px;
+    margin-top: 0px;
     text-align: center;
+
+    --selective-yellow: #FFB703;
 }
 
 *:not(p, h1) {
@@ -21,7 +23,19 @@
 }
 
 body {
-    background: #333;
+    background: linear-gradient(to bottom right, #333, #344);
+    background-attachment: fixed;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    margin-top: 200px;
+    background-color: #444;
+    width: 600px;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 input {
@@ -31,20 +45,25 @@ input {
 
 [coolbutton] {
     background-color: #fff;
-    margin-top: 10px;
+    margin: 20px 0 10px 0;
     width: 200px;
     height: 50px;
     font-size: 20pt;
     border-radius: 1000px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all 0.2s ease;
+    border: none;
 }
 
 [coolbutton]:hover {
-    background-color: #666;
+    background-color: rgb(80, 159, 159);
+}
+
+[coolbutton]:active {
+    background-color: rgb(38, 70, 70);
 }
 
 p {
-    margin: 0;
+    margin: 5px 0;
 }
 
 .result {
@@ -64,4 +83,31 @@ textarea {
     resize:none;
     background: #666;
     color: white;
+}
+
+/* Language switcher style */
+.language-switcher {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    display: flex;
+    width: 100px;
+    margin-right: 0px;
+}
+
+.language-switcher > a {
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+}
+
+.language-switcher > a:hover {
+    text-decoration: underline;
+}
+
+[vert-line] {
+    margin-top: 5px;
+    border-left: 3px solid white;
+    height: 30px;
 }

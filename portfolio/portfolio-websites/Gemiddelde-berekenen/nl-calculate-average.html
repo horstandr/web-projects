@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemiddelde Berekenen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../portfolio-images/portfolio-favicon/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="">NL</a>
+        <div vert-line></div>
+        <a href="en-calculate-average">EN</a>
+    </div>
+    <div class="body">
+        <h1>Gemiddelde Berekenen</h1>
+        <p>Bereken hier je gemiddelde cijfer!</p>
+        <div>
+            <form action="javascript:Calculate()">
+                <p>Voer hier je cijfers in:</p><br>
+                <textarea name="number1" id="id1" cols="5" rows="1" placeholder="1"></textarea>
+                <textarea name="number2" id="id2" cols="5" rows="1" placeholder="2"></textarea>
+                <br>
+                <button onclick="js:Calculate()" coolbutton>Bereken</button>
+            </form>
+        </div>
+        <p>Resultaat:</p>
+        <div class="result" id="result"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
