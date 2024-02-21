@@ -20,6 +20,11 @@
     --palatinate: #5C164E;
     --plum: #9B287B;
     --bright-pink: #F7567C;
+    --indigo--dye: #284B63;
+    --carrib-current: #3C6E71;
+    --jet: #353535;
+    --white: #FFF;
+    --platinum: #D9D9D9;
 }
 
 /*
@@ -48,7 +53,7 @@ body {
 
 .intro {
     margin: 50px 0;
-    padding: 5px;
+    padding: 20px;
     margin-left: calc(50vw - (800px / 2));
     width: 800px;
     line-height: 50px;
@@ -61,9 +66,10 @@ body {
 /* Portfolio space styling */
 
 .portfolio-show {
+    margin-bottom: 50px;
     margin-left: calc(50% - (1560px / 2));
     border-radius: 20pt;
-    height: 360px;
+    height: 720px;
     padding: 10px;
     width: 1560px;
     background-color: var(--pale-azure-translucent);
@@ -152,11 +158,17 @@ a{
 }
 
 .tile3 > a:hover > .portfolio-desc {
-    
     background-color: #000;
     color: #0f0;
     box-shadow: 0 30px 100px #0f0;
     border-top: 1px solid rgb(0, 122, 0);
+    z-index: 1;
+}
+
+.tile4 > a:hover > .portfolio-desc {
+    background-color: var(--indigo--dye);
+    color: var(--platinum);
+    box-shadow: 0 30px 100px var(--indigo--dye);
     z-index: 1;
 }
 
@@ -176,6 +188,12 @@ a{
 }
 
 .tile3 > a > .portfolio-desc {
+    box-shadow: 0 30px 100px white;
+    /* Makes sure the box-shadow is above the image*/
+    z-index: 1;
+}
+
+.tile4 > a > .portfolio-desc {
     box-shadow: 0 30px 100px white;
     /* Makes sure the box-shadow is above the image*/
     z-index: 1;
