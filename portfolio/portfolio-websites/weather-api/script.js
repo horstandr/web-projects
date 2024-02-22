@@ -51,7 +51,7 @@ async function getWeatherData(city) {
     console.log(response);
 
     if(!response.ok) {
-        throw new Error("Could not fetch weather data");
+        throw new Error("Please enter a good city.");
 
     }
 
