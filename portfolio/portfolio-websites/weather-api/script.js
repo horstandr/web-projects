@@ -43,7 +43,7 @@ function displayError(message) {
 
 async function getWeatherData(city) {
 
-    const apiUrl = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org//data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
 
     const response = await fetch(apiUrl);
@@ -60,9 +60,9 @@ async function getWeatherData(city) {
 
 function displayWeatherInfo(data) {
     console.log(data);
-    const  {name: city,
-            main: {temp, humidity},
-            weather: [{description, id}]} = data;
+    const  {location: {name},
+            current: {temp_c, humidity},
+            current: {condition: {description, id}}} = data;
     
     card.textContent = '';
     card.style.display = 'block';
@@ -90,7 +90,7 @@ function displayWeatherInfo(data) {
     
 
     cityDisplay.textContent = city;
-    tempDisplay.textContent = `${Math.round((temp - 273).toFixed(1))} °C`;
+    tempDisplay.textContent = `${temp_c} °C`;
     weatherDisplay.textContent = description.charAt(0).toUpperCase() + description.slice(1);
     emojiDisplay.textContent = getEmoji(id);
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
