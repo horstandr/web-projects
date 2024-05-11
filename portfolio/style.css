@@ -206,22 +206,17 @@ a{
     z-index: 1;
 }
 
-/*@keyframes tile1anim {
-    0%{
-        background-color: rgba(255,255,255,0.3);
-        color: black;
-    }
-    100% {
-        background-color: #333;
-        color: var(--selective-yellow);
-        box-shadow: 0 30px 100px var(--selective-yellow);
-    }
+/* Language switcher CSS */
+.language {
+    position: absolute;
+    height: 20px;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 20px;
+    top: 10px;
+    right: 10px;
 }
 
-@keyframes tile2anim {
-    
-}
-
-@keyframes tile3anim {
-    
+a & .selector {
+    font-size: larger;
 }
