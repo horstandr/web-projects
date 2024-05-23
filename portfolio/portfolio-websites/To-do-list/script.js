@@ -61,9 +61,12 @@ function displayToDo(id, text) {
 }
 
 function updateApp() {
+    count = localStorage.getItem('itemcount');
     console.log('updating...')
         for(i=0;i<parseInt(count);i++) {
-            displayToDo(i+1, localStorage.getItem(`Id${i+1}`))
+            if (localStorage.getItem(`Id${i+1}`) != null || localStorage.getItem(`Id${i+1}`) != 'NaN') {
+                displayToDo(i+1, localStorage.getItem(`Id${i+1}`))
+            }
         }
     console.log('updated')
 }
@@ -74,6 +77,7 @@ function checkItem(id) {
 }
 
 function deleteToDo(id) {
+    count--;
     document.getElementById(id).style.display = 'none';
     localStorage.removeItem(`Id${id}`);
     localStorage.setItem('itemcount', parseInt(localStorage.getItem('itemcount')) - 1);
