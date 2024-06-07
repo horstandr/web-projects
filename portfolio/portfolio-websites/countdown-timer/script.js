@@ -16,7 +16,7 @@ function startCountdown() {
     var days = Math.floor((dateTimeFinal / 86_400_000));
     var hours = Math.floor((dateTimeFinal % (1000 * 60 * 60 * 24)) / 3_600_000);
     var minutes = Math.floor((dateTimeFinal % (1000 * 60 * 60)) / 60_000);
-    var seconds = Math.floor((dateTimeFinal % (1000 * 60)) / 1_000);
+    var seconds = Math.floor((dateTimeFinal % (1000 * 60)) / 1_000); // Just a word
 
     display.innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ';
 
