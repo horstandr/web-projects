@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./portfolio-images/portfolio-favicon/favicon-32x32.png" type="image/x-icon">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="app-nl.js" defer></script>
+    <div class="language">
+        <p><strong></strong>NL|<a href="bmi-en.html" class="selector">EN</a></strong></p>
+    </div>
 </head>
 <body>
     <h1 class="morphism-h1">Bmi berekenen</h1>
     <div class="container">
         <form action="" method="post">
-            <label for="weight">Gewicht (kg):</label>
-            <br>
-            <input type="number" name="weight" id="weight" placeholder="Weight..." min="20" max="600" required>
-            <br>
             <label for="height">Lengte (cm):</label>
             <br>
             <input type="number" name="height" id="height" placeholder="Height..." min="80" max="300" required>
             <br>
-            <button type="submit">Calculate BMI</button>
+            <label for="weight">Gewicht (kg):</label>
+            <br>
+            <input type="number" name="weight" id="weight" placeholder="Weight..." min="20" max="600" required>
+            <br>
+            <button type="submit">Bereken BMI</button>
         </form>
         <span id="bmi-placeholder">Bmi:</span>
         <h1 id="bmi">XX</h1>

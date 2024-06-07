@@ -17,6 +17,10 @@ form.addEventListener("submit", function(e) {
     w = parseInt(weight.value);
     w*=10000; // Converts kgs to grams
 
+    // Clears input fields
+    height.value = '';
+    weight.value = '';
+
     // Output and calculation BMI
     bmi = w / (h * h);
     console.log('Exact: ' + bmi); // Logs exact BMI
