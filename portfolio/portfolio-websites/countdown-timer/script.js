@@ -21,6 +21,7 @@ function startCountdown() {
     display.innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ';
 
     if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
+        document.getElementById('end-sound').play();
         setTimeout(100);
         alert('The time is here...');
         location.reload();

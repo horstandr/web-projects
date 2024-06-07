@@ -82,8 +82,8 @@ body {
 }
 
 .datetime:hover {
-    background-color: var(--carrib-current);
-    color: var(--platinum);
+    background-color: #999;
+    color: #fff;
 }
 
 ::-moz-selection {
@@ -108,4 +108,8 @@ body {
     border-radius: 15pt;
     background-color: var(--platinum);
     font-size: 200pt;
+}
+
+.datetimelab {
+    margin-bottom: 5px;
 }
