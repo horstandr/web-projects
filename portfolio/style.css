@@ -179,6 +179,13 @@ a{
     z-index: 1;
 }
 
+.tile6 > a:hover > .portfolio-desc {
+    background: rgb(209, 26, 255);
+    color: var(--platinum);
+    box-shadow: 0 30px 100px white;
+    z-index: 1;
+}
+
 /* Desc in the individual tiles*/
 
 .tile1 > a > .portfolio-desc {
@@ -202,6 +209,18 @@ a{
 
 .tile4 > a > .portfolio-desc {
     box-shadow: 0 30px 100px white;
+    /* Makes sure the box-shadow is above the image*/
+    z-index: 1;
+}
+
+.tile5 > a > .portfolio-desc {
+    box-shadow: 0 30px 100px black;
+    /* Makes sure the box-shadow is above the image*/
+    z-index: 1;
+}
+
+.tile6 > a > .portfolio-desc {
+    box-shadow: 0 30px 100px black;
     /* Makes sure the box-shadow is above the image*/
     z-index: 1;
 }
