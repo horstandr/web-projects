@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app-nl.js" defer></script>
+</head>
+<body>
+    <h1 class="morphism-h1">Bmi berekenen</h1>
+    <div class="container">
+        <form action="" method="post">
+            <label for="weight">Gewicht (kg):</label>
+            <br>
+            <input type="number" name="weight" id="weight" placeholder="Weight..." min="20" max="600" required>
+            <br>
+            <label for="height">Lengte (cm):</label>
+            <br>
+            <input type="number" name="height" id="height" placeholder="Height..." min="80" max="300" required>
+            <br>
+            <button type="submit">Calculate BMI</button>
+        </form>
+        <span id="bmi-placeholder">Bmi:</span>
+        <h1 id="bmi">XX</h1>
+        <h3 id="bmi-text">Jij hebt<span>&nbsp;obesitas</span>.</h3>
+        <h6 class="warning">Waarschuwing: deze berekeningen zijn gebaseerd op volwassenen.</h6>
+    </div>
+    
+</body>
+</html>

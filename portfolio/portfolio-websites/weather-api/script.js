@@ -1,4 +1,4 @@
-const apiKey = "5d2b1f20302db241ae9e9a15c63ddf1b";
+const apiKey = "eb209f22e4874ed488c84626240706";
 const formCity = document.getElementById('formCity');
 const card = document.getElementById('card');
 const cardCity = document.getElementById('city');
@@ -62,7 +62,7 @@ function displayWeatherInfo(data) {
     console.log(data);
     const  {location: {name},
             current: {temp_c, humidity},
-            current: {condition: {description, id}}} = data;
+            current: {condition: {text, icon}}} = data;
     
     card.textContent = '';
     card.style.display = 'block';
@@ -78,7 +78,7 @@ function displayWeatherInfo(data) {
     weatherDisplay.classList.add('weather');
     emojiDisplay.classList.add('emoji');
     humidityDisplay.classList.add('humidity');
-    if (city.length > 8) {
+    if (name.length > 8) {
         card.style.width = 'fit-content';
         cityDisplay.style.padding = '0 50px';
     } else {
@@ -87,12 +87,15 @@ function displayWeatherInfo(data) {
         cityDisplay.style.marginTop = '0px';
     }
 
-    
+    const linkIcon = icon.split('//cdn.weatherapi.com/weather/64x64');
+    const linklink = linkIcon[1];
+    const iconIcon = 'https://cdn.weatherapi.com/weather/128x128' + linklink;
+    console.log(iconIcon);
 
-    cityDisplay.textContent = city;
+    cityDisplay.textContent = name;
     tempDisplay.textContent = `${temp_c} °C`;
-    weatherDisplay.textContent = description.charAt(0).toUpperCase() + description.slice(1);
-    emojiDisplay.textContent = getEmoji(id);
+    weatherDisplay.textContent = text.charAt(0).toUpperCase() + text.slice(1);
+    emojiDisplay.innerHTML = getEmoji(iconIcon);
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
 
     card.appendChild(cityDisplay);
@@ -103,23 +106,6 @@ function displayWeatherInfo(data) {
 
 }   
 
-function getEmoji(weatherId) {
-    switch(true) {
-        case (weatherId >= 200 && weatherId < 300):
-            return '⛈';
-        case (weatherId >= 300 && weatherId < 400):
-            return '🌧';
-        case (weatherId >= 500 && weatherId < 600):
-            return '🌧';
-        case (weatherId >= 600 && weatherId < 700):
-            return '❄';
-        case (weatherId >= 700 && weatherId < 800):
-            return '🌫';
-        case (weatherId === 800):
-            return '☀';
-        case (weatherId >= 801 && weatherId < 810):
-            return '☁';
-        default:
-            return '✨';
-    }
+function getEmoji(weatherImg) {
+    return `<img width="200px" src="${weatherImg}"/>`;
 }
