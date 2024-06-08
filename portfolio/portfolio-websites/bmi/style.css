@@ -6,7 +6,7 @@
     font-family: "Nunito", Arial, Helvetica, sans-serif;
 }
 
-/* Makes a good background */
+/* Makes a gradient background */
 body {
     background: linear-gradient(to bottom right, rgb(134, 134, 255), rgb(209, 26, 209));
     background-attachment: fixed;
@@ -52,16 +52,17 @@ input[type=number] {
     background-color: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255,255,255,0.33);
     backdrop-filter: blur(3px);
+    width: 470px;
     -webkit-backdrop-filter: blur(3px);
     padding: 20px;
-    padding-top: 95px;
+    padding-top: 115px;
     border-radius: 20px;
     text-align: center;
     overflow: hidden;
     box-shadow: #00000034 0px 0px 10px;
 }
 
-/* spaces the inputs */
+/* Spaces the inputs */
 input, label {
     margin-bottom: 10px;
 }
@@ -69,7 +70,7 @@ input, label {
 /* Centers the input field*/
 body {
     display: flex;
-    align-items: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -119,4 +120,22 @@ a, .selector {
 
 p {
     margin: 0;
+}
+
+.language-selector {
+    cursor: pointer;
+}
+
+/* Styles back-to-home button */
+.home-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #fff;
+    border-radius: 100vh;
+    padding: 4px;
+}
+
+.home-button:hover > a {
+    font-weight: bold;
 }
