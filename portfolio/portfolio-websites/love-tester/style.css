@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'love';
+    src: url(../../portfolio-fonts/love/Love.ttf) format('truetype');
+}
+
+body {
+    background-image: url(../love-tester/img/love-background.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    font-family: 'love';
+}
+
+.container {
+    padding: 10px;
+
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button[type=submit] {
+    background: red;
+    border: 1px solid black;
+}

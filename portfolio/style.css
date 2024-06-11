@@ -69,7 +69,7 @@ body {
     margin-bottom: 50px;
     margin-left: calc(50% - (1560px / 2));
     border-radius: 20pt;
-    height: 720px;
+    height: 1080px;
     padding: 10px;
     width: 1560px;
     background-color: var(--pale-azure-translucent);
@@ -186,6 +186,20 @@ a{
     z-index: 1;
 }
 
+.tile7 > a:hover > .portfolio-desc {
+    background: white;
+    color: var(--indigo--dye);
+    box-shadow: 0 30px 100px white;
+    z-index: 1;
+}
+
+.tile8 > a:hover > .portfolio-desc {
+    background: rgb(255, 0, 115);
+    color: var(--platinum);
+    box-shadow: 0 30px 100px rgb(209, 26, 255);
+    z-index: 1;
+}
+
 /* Desc in the individual tiles*/
 
 .tile1 > a > .portfolio-desc {
@@ -225,6 +239,17 @@ a{
     z-index: 1;
 }
 
+.tile7 > a > .portfolio-desc {
+    box-shadow: 0 30px 100px black;
+    /* Makes sure the box-shadow is above the image*/
+    z-index: 1;
+}
+
+.tile8 > a > .portfolio-desc {
+    box-shadow: 0 30px 100px white;
+    /* Makes sure the box-shadow is above the image*/
+    z-index: 1;
+}
 /* Language switcher CSS */
 .language {
     position: absolute;
