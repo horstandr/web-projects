@@ -8,6 +8,7 @@ var tries = 0;
 var form = document.getElementById('form-form');
 let regex = /^[a-z]+$/;
 var lettersGuessed = 0;
+var currentLanguage = document.getElementById('current-language') + '';
 
 form.addEventListener('submit', event => {
     event.preventDefault();
@@ -18,10 +19,10 @@ async function onLoad() {
     try {
         const language = window.location.search;
         randomWord = await getRandomWord(language) + '';
+        randomWord = randomWord.toLowerCase();
         
         console.log(randomWord);
 
-        var word = '';
         randomWordArray = randomWord.split('');
         console.log(randomWordArray);
         console.log(randomWord);
@@ -80,16 +81,34 @@ function checkLetter() {
         console.log('Entire word was not guessed.');
     }*/
 
+    // Checks if any letters match up or 
+
     for (j=0;j<randomWord.length;j++) {
         for (k=0;k<randomWord.length;k++) {
             if (randomWordArray[j] == checkWordSplit[k]) {
-                console.log('letter ' + randomWordArray[j] + ' is shown.');
-                document.getElementById('message').innerHTML = `Correct! The letter ${randomWordArray[j]} is shown.`;
-                document.getElementById('message').style.color = 'green';
-                guessed = true;
+                for(m=0;m<guessedLetters.length;m++) {
+                    if (guessedLetters[m] == checkWord.value) {
+                        console.log('Letter already guessed!');
+                        document.getElementById('message').innerHTML = `This letter is already guessed.`;
+                        document.getElementById('message').style.color = 'red';
+
+                        return;
+                    }
+                }
+                if (guessed) {
+                    console.log('letter ' + randomWordArray[j] + ' is shown.');
+                    document.getElementById('message').innerHTML = `Correct! The letter ${randomWordArray[j]} is shown.`;
+                    document.getElementById('message').style.color = 'green';
+                    guessedLetters[guessedLetters.length] = randomWordArray[j];
+                    lettersGuessed++;
+                   
+                    // Stops if statement from going a second time
+                    guessed = true; 
+                }
+
+                // Will go until end of for-loop
                 lettersShown[j] = randomWordArray[j];
-                lettersGuessed++;
-                guessedLetters[guessedLetters.length] = randomWordArray[j];
+                
             }
         }
     }
@@ -113,13 +132,16 @@ function checkLetter() {
         location.reload();
     }
     
-
+    // Incorrect goes here:
     if (!guessed) {
         document.getElementById('message').innerHTML = `The letter you typed is not present in this word.`
         document.getElementById('message').style.color = 'red';
         guessedLetters[guessedLetters.length] = checkWord.value;
     }
        
+    // Updates guessed letters
     document.getElementById('guessed-words').innerHTML = `Guessed letters: ${guessedLetters}`
+    
+    // Clears input field
     checkWord.value = ''; 
 }
