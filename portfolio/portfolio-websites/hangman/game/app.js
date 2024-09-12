@@ -115,11 +115,11 @@ function checkLetter() {
 
     console.log(lettersGuessed);
 
-    if(lettersGuessed == randomWord.length) {
+    if(lettersShownString == randomWord) {
+        console.log('won');
         alert('You win!');
         location.reload;
     }
-
 
     lettersShownString = lettersShown.join('');
     document.getElementById('words').innerHTML = `<h1>${lettersShownString}</h1>`;

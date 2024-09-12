@@ -15,9 +15,9 @@ form.addEventListener('submit', event => {
         result.innerHTML = `Please input 2 names!`;
         return;
     }
-    if (name1.value.toLowerCase() == 'xavier' && name2.value.toLowerCase() == 'veerle') {
+    if (name1.value.toLowerCase() == 'shasjf' && name2.value.toLowerCase() == 'shasjd') {
         result.innerHTML = `Love: 100/100`;
-    } else if (name1.value.toLowerCase() == 'veerle' && name2.value.toLowerCase() == 'xavier') {
+    } else if (name1.value.toLowerCase() == 'veaskdjfhlerle' && name2.value.toLowerCase() == 'asdfaskjdhf') {
         result.innerHTML = `Love: 100/100`;
     } else {
         result.innerHTML = `Love: ${love}/100`;

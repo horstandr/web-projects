@@ -1,0 +1,11 @@
+.board {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: auto auto auto;
+    gap: 50px;
+}
+
+.space > button {
+    width: 200px;
+    height: 200px;
+}
