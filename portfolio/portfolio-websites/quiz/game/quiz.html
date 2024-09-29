@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <script defer src="quiz.js"></script>
+</head>
+<body onload="quizLoop();">
+    <div class="start-container" id="start-container">
+        <h1>Olivia's QUIZ</h1>
+        <p>Helemaal handgemaakt door András</p>
+        <button onclick="document.getElementById('start-container').style.display = 'none';var el = document.documentElement,rfs = el.requestFullscreen;if(typeof rfs!='undefined' && rfs){rfs.call(el);}">START</button>
+    </div>
+    <div class="quit-container"><a href="../index.html"><button class="quit" id="quit">< EXIT</button></a></div>
+    <div class="current-question-display" id="question-display"></div>
+    <div class="quiz-container" id="question-ui">
+        <div class="quiz-title-container">
+            <h1 class="quiz-title" id="quiz-title">Quiz Question 1</h1>
+            <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="picture" class="quiz-image" id="quiz-image">
+        </div>
+        <div class="quiz-answers-container">
+            <button class="answer" id="answer1" onclick="submit(this.innerHTML)">Answer 1</button>
+            <button class="answer" id="answer2" onclick="submit(this.innerHTML)">Answer 2</button>
+            <button class="answer" id="answer3" onclick="submit(this.innerHTML)">Answer 3</button>
+            <button class="answer" id="answer4" onclick="submit(this.innerHTML)">Answer 4</button>
+        </div>
+    </div>
+    <div class="result-container" id="result-ui" style="display: none;">
+        <h1 id="result">CORRECT!</h1>
+        <p id="good-answer"></p>
+        <button onclick="nextQuestion();" class="next-button" id="next-button">Volgende Vraag</button>
+    </div>
+</body>
+</html>

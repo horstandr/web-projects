@@ -1,0 +1,213 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* THE FOLLOWING COUNTS FOR EVERY OBJECT */
+* {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* QUIT BUTTON STYLING */
+.quit-container {
+    position: absolute;
+    z-index: 1000;
+    top: 20px;
+    left: 24px;
+}
+
+.current-question {
+    position:absolute;
+    right:64px;
+    top:20px;
+    margin: 0;
+    text-align: center;
+}
+
+.quit {
+    color: red;
+    border: none;
+    background: white;
+    border-radius: 5pt;
+    cursor: pointer;
+    box-shadow: 5px 5px 50px gray;
+}
+
+/* Make button interactive */
+.quit:hover {
+    background: rgb(250,250,250);
+}
+.quit:active {
+    background-color: gray;
+}
+
+/* STYLING */
+/* CONTAINERS */
+.quiz-container {
+    /* border: 1px solid black; */
+    padding: 5px;
+}
+
+.quiz-title-container {
+    /*border: 1px solid black;*/
+    padding: 10px;
+    align-items: center;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5pt;
+}
+
+.quiz-answers-container {
+    /* border: 1px solid black; */
+    margin-top: 5px;
+
+    /* Making a grid layout like with kahoot. */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+
+    transition: all 0.2s ease-in-out;
+}
+
+/* ANSWER STYLING */
+.answer {
+    height: 20vh;
+    font-size: 50pt;
+    border-radius: 5pt;
+    
+    /* Making the buttons nice */
+    border: 1px solid black;
+    cursor: pointer;
+
+    transition: all 0.2s ease-in;
+}
+
+/* Individual answer styling */
+#answer1 {
+    background: rgb(106, 106, 255);
+}
+
+#answer2 {
+    background: rgb(255, 106, 106);
+}
+
+#answer3 {
+    background: rgb(238, 255, 105);
+}
+
+#answer4 {
+    background: rgb(106, 255, 138);
+}
+
+/* Interactivity styling for the answers, this needs to be done individually */
+
+#answer1:active {
+    background-color: rgb(0, 0, 255);
+}
+
+#answer2:active {
+    background-color: rgb(255, 0, 0);
+}
+
+#answer3:active {
+    background-color: rgb(214, 214, 0);
+}
+
+#answer4:active {
+    background-color: rgb(0, 255, 0);
+}
+
+.answer:hover {
+    transform: scale(1.01);
+    font-size: 55pt;
+}
+
+/* TITLE AND IMAGE */
+.quiz-title {
+    text-align: center;
+}
+
+.quiz-image {
+    width: auto;
+    height: 42vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Margin needed with font size. When using basic font, please adjust. */
+    margin-bottom: 20px;
+}
+
+/* RESULT CONTAINER STYLING */
+.result-container {
+    background-color: white;
+    top: calc(50vh - (238px / 2));
+    left: calc(50vw - (1000px / 2));
+    padding: 0 20px 0 20px;
+    z-index: 2000;
+    font-size: 60pt;
+
+    box-shadow: 0px 0px 500px black;
+    text-align: center;
+    position: absolute;
+    width: 1000px;
+    height: 238px;
+    border-radius: 5pt;
+}
+
+#result {
+    margin: 10px;
+}
+
+.next-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.next-button:hover {
+    transform: scale(1.1);
+}
+
+#good-answer {
+    font-size: 20pt;
+}
+
+/* START CONTAINER OVERLAY STYLING */
+
+.start-container {
+    position: absolute;
+    z-index: 10;
+    top:0;left:0;
+    text-align: center;
+    font-size: 60pt;
+    background-color: white;
+    width: 100vw;
+    height: 100vw;
+}
+
+.start-container > button {
+    width: 25vw;
+    height: 20vh;
+    background: greenyellow;
+    border: 1px solid black;
+    font-size: 20pt;
+    position: absolute;
+    left: calc(50vw - (25vw / 2));
+    border-radius: 500pt;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.start-container > button:hover {
+    transform: scale(1.5);
+}
+
+.start-container > button:active {
+    transform: scale(1.3);
+    background-color: green;
+}
+.start-container > p {
+    font-size: 10pt;
+}
