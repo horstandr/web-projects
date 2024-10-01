@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password gen</title>
+</head>
+<body>
+    <h2>Password generator</h1>
+    <h1 id="input"></h1>
+    <button onclick="let result1 = makeid(20); document.getElementById('input').innerHTML = result1;">Generate</button>
+    <button onclick="navigator.clipboard.writeText(result1);">Copy To Clipboard</button>
+</body>
+<script>
+    function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?#@$%&*<>;:';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+    }
+</script>
+</html>
